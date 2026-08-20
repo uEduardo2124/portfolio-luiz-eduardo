@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | Luiz Eduardo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Menu superior repetido em todas as páginas -->
+  <header>
+    <nav aria-label="Menu principal">
+      <ul>
+        <li><a href="sobre.html">Sobre mim</a></li>
+        <li><a href="formacao.html">Formação</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+        <li><a href="contato.html" class="atual" aria-current="page">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contato</h1>
+
+    <!-- Formulário com nome, e-mail e mensagem com validações no JS -->
+    <section class="contato-caixa">
+      <p class="contato-apoio">Preencha o formulário abaixo para enviar uma mensagem.</p>
+
+      <form id="form-contato" novalidate>
+        <div class="contato-campo">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" autocomplete="name">
+          <p class="contato-erro" id="erro-nome" hidden></p>
+        </div>
+
+        <div class="contato-campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" autocomplete="email">
+          <p class="contato-erro" id="erro-email" hidden></p>
+        </div>
+
+        <div class="contato-campo">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="6"></textarea>
+          <p class="contato-erro" id="erro-mensagem" hidden></p>
+        </div>
+
+        <button type="submit" class="botao">Enviar</button>
+
+        <!-- Feedback da validação em JS e do envio simulado -->
+        <p class="contato-status" id="contato-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Carrega o envio simulado do formulário -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

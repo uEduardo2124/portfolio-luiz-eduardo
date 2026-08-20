@@ -1,0 +1,382 @@
+/* Cores do site. Tela estreita primeiro; telas maiores nas media queries. */
+:root {
+  --fundo: #0b0b10;
+  --superficie: #14141c;
+  --texto: #f4f1ff;
+  --texto-suave: #b7b3c7;
+  --destaque: #7c3aed;
+  --destaque-hover: #8b5cf6;
+  --borda: #2a2740;
+  --erro: #fb7185;
+  --gap-cards: 1.25rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: system-ui, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--destaque);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--destaque-hover);
+}
+
+/* Menu no topo, sempre visível. */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  background: var(--superficie);
+  border-bottom: 1px solid var(--borda);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  gap: 0.25rem;
+}
+
+nav a {
+  display: block;
+  color: var(--texto);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: var(--destaque-hover);
+}
+
+nav a.atual {
+  color: var(--destaque);
+  font-weight: 700;
+}
+
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+main > h1 {
+  margin-bottom: var(--gap-cards); 
+}
+
+h2 {
+  font-size: 1.35rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+/* --- Sobre mim --- */
+
+.sobre-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.sobre-foto {
+  margin: 0;
+}
+
+.sobre-foto img {
+  width: 100%;
+  max-height: 20rem;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  border: 1px solid var(--borda);
+  background: var(--superficie);
+}
+
+.sobre-meta {
+  margin: 0 0 0.5rem;
+  color: var(--texto-suave);
+}
+
+.sobre-apresentacao {
+  margin-bottom: 2.5rem;
+}
+
+.sobre-apresentacao p {
+  margin: 0 0 1rem;
+  color: var(--texto-suave);
+}
+
+.sobre-hobbies {
+  margin-bottom: 2.5rem;
+}
+
+.sobre-hobbies p {
+  margin: 0 0 1rem;
+  color: var(--texto-suave);
+}
+
+/* --- Formação --- */
+
+.formacao-bloco {
+  margin-bottom: 2.5rem;
+}
+
+.formacao-bloco:last-child {
+  margin-bottom: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap-cards);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+}
+
+.card-meta {
+  margin: 0 0 0.35rem;
+  color: var(--texto-suave);
+}
+
+/* --- Portfólio --- */
+
+.portfolio-bloco {
+  margin-bottom: 2.5rem;
+}
+
+.portfolio-bloco:last-child {
+  margin-bottom: 0;
+}
+
+.botao,
+.botao-contorno {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid var(--destaque);
+}
+
+.botao {
+  background: var(--destaque);
+  color: var(--texto);
+}
+
+/* Hover do botão preenchido. */
+a.botao:hover,
+a.botao:focus-visible {
+  background: #5b21b6;
+  border-color: #5b21b6;
+  color: var(--texto);
+}
+
+/* Botão de contorno. */
+.botao-contorno {
+  background: transparent;
+  color: #c4b5fd;
+  border-color: #c4b5fd;
+}
+
+a.botao-contorno:hover,
+a.botao-contorno:focus-visible {
+  color: #ddd6fe;
+  border-color: #ddd6fe;
+}
+
+/* Se o botão não for um link. */
+span.botao,
+span.botao-contorno {
+  background: transparent;
+  color: var(--texto-suave);
+  border: 1px dashed var(--borda);
+  font-weight: 600;
+  cursor: default;
+}
+
+span.botao:hover,
+span.botao:focus-visible,
+span.botao-contorno:hover,
+span.botao-contorno:focus-visible {
+  background: transparent;
+  color: var(--texto-suave);
+  border-color: var(--borda);
+}
+
+button.botao {
+  font: inherit;
+  cursor: pointer;
+}
+
+button.botao:hover,
+button.botao:focus-visible {
+  background: #5b21b6;
+  border-color: #5b21b6;
+  color: var(--texto);
+}
+
+/* --- Contato --- */
+
+.contato-caixa {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 0.75rem;
+  padding: 1.5rem 1.25rem;
+}
+
+.contato-apoio {
+  margin: 0 0 1.5rem;
+  color: var(--texto-suave);
+}
+
+.contato-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.contato-campo label {
+  font-weight: 600;
+}
+
+.contato-campo input,
+.contato-campo textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--borda);
+  border-radius: 0.5rem;
+  background: var(--fundo);
+  color: var(--texto);
+  font: inherit;
+}
+
+.contato-campo textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.contato-campo input:focus-visible,
+.contato-campo textarea:focus-visible {
+  outline: 2px solid var(--destaque);
+  outline-offset: 2px;
+  border-color: var(--destaque);
+}
+
+.contato-campo input.contato-invalido,
+.contato-campo textarea.contato-invalido {
+  border-color: var(--erro);
+}
+
+.contato-erro {
+  margin: 0;
+  color: var(--erro);
+  font-size: 0.9rem;
+}
+
+.contato-status {
+  margin: 1rem 0 0;
+  min-height: 1.5em;
+}
+
+.contato-status-ok {
+  color: var(--destaque-hover);
+}
+
+.contato-status-erro {
+  color: var(--erro);
+}
+
+@media (min-width: 720px) {
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+
+  .sobre-hero {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .sobre-foto {
+    flex: 0 0 16rem;
+  }
+
+  .sobre-foto img {
+    max-height: 20rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contato-caixa {
+    max-width: 36rem;
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 960px) {
+  main {
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
